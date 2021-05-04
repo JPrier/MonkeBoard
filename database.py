@@ -11,7 +11,8 @@ class database:
             host='localhost')
         self.c = conn.cursor()
 
-    def add_row():
+    def add_row(args):
+        c.execute("INSERT INTO " + str(self.db) + " VALUES " + ','.join(args))
         # # Insert some example data.
         # c.execute("INSERT INTO numbers VALUES (1, 'One!')")
         # c.execute("INSERT INTO numbers VALUES (2, 'Two!')")
