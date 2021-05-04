@@ -19,8 +19,18 @@ class database:
         # conn.commit()
         pass
 
-    def get_row():
-        # # Print the contents of the database.
+    def get_all():
+        # Print the contents of the database.
         # c.execute("SELECT * FROM numbers")
         # print([(r[0], r[1]) for r in c.fetchall()])
+        pass
+
+    def get_values(args):
+        # c.execute("SELECT <args> FROM numbers")
+        # c.fetchall
+        pass
+
+    def get_filtered(args, filter):
+        # c.execute("SELECT <args> FROM numbers where <filter>")
+        # c.fetchall
         pass
