@@ -8,4 +8,5 @@ cgitb.enable()
 print("Content-Type: text/html")
 print()
 
-print("MONKEEEE")
+with open('index.html') as i:
+    print i.read()
