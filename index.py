@@ -8,5 +8,5 @@ cgitb.enable()
 print("Content-Type: text/html")
 print()
 
-with open('index.html') as i:
-    print i.read()
+with open('index.html') as f:
+    print(f.read())
