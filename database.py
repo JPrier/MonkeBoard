@@ -13,29 +13,18 @@ class database:
 
     def add_row(args):
         c.execute("INSERT INTO " + str(self.db) + " VALUES (" + ','.join(args) + ")")
-        # # Insert some example data.
-        # c.execute("INSERT INTO numbers VALUES (1, 'One!')")
-        # c.execute("INSERT INTO numbers VALUES (2, 'Two!')")
-        # c.execute("INSERT INTO numbers VALUES (3, 'Three!')")
-        # conn.commit()
-        pass
 
     def get_all():
-        # Print the contents of the database.
-        # c.execute("SELECT * FROM numbers")
-        # print([(r[0], r[1]) for r in c.fetchall()])
-        c.execute("SELECT * FROM numbers")
+        c.execute("SELECT * FROM " + str(self.db))
         result = c.fetchall()
         for row in result:
             print(row, '\n')
-        pass
 
     def get_values(args):
-        # c.execute("SELECT <args> FROM numbers")
-        # c.fetchall
-        pass
+        c.execute("SELECT " + str(args) + " FROM " + str(self.db))
+        print([row for row in c.fetchall()])
 
     def get_filtered(args, filter):
-        # c.execute("SELECT <args> FROM numbers where <filter>")
-        # c.fetchall
-        pass
+        c.execute("SELECT " + str(args) + " FROM " + str(self.db) + " where " + str(filter))
+        print([row for row in c.fetchall()])
+        
