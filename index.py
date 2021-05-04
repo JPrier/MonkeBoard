@@ -1,6 +1,4 @@
-# Turn on debug mode.
-import cgitb
-cgitb.enable()
+#!/usr/bin/python
 
 # Print necessary headers.
 print("Content-Type: text/html")
