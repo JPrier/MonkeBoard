@@ -2,13 +2,14 @@
 import pymysql
 
 class database:
-    def __init__(self, database_name):
+    def __init__(self, db):
+        self.db = db
         self.conn = pymysql.connect(
             db=database_name,
             user='root',
             passwd='',
             host='localhost')
-        self.db = conn.cursor()
+        self.c = conn.cursor()
 
     def add_row():
         # # Insert some example data.
