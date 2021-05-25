@@ -24,12 +24,12 @@ class database:
         c.execute("SELECT * FROM " + str(table))
         result = c.fetchall()
         for row in result:
-            print(row, '\n')
+            return(row, '\n')
 
     def get_values(args):
         c.execute("SELECT " + ','.join(args) + " FROM " + str(table))
-        print([row for row in c.fetchall()])
+        return([row for row in c.fetchall()])
 
     def get_filtered(args, filter, table):
         c.execute("SELECT " + ','.join(args) + " FROM " + str(table) + " where " + str(filter))
-        print([row for row in c.fetchall()])
+        return([row for row in c.fetchall()])
