@@ -57,12 +57,12 @@
 
                 <script type="text/javascript">
                   function setGame() {
-                    var game = location.search.split('game=')[1] ? location.search.split('game=')[1] : 'home';
+                    var game = location.search.split('game=')[1];
                     switch(game) {
                       case "Tsnake":
                         document.getElementById("game").innerHTML = '<script id="widget" type="text/javascript" src="Turing Snake/sketch.js" />';
                         // document.getElementById("game").innerHTML='<object type="text/html" data="Turing Snake/index.html"></object>';
-                      case "home":
+                      default:
                         document.location.href = "index.html";
                     }
                   }
