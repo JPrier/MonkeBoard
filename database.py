@@ -10,12 +10,12 @@ class database:
             host='localhost')
         self.c = conn.cursor()
 
-    def does_table_exist(table):
+    def check_table_exists(table):
         c.execute("SELECT TABLES LIKE '" + str(table) + "'")
         return c.fetchone()
 
-    def add_table(table, columns):
-        c.execute("CREATE TABLE " + str(table) + str(columns))
+    def create_table(table, columns):
+        c.execute("CREATE TABLE " + str(table) + " " + str(columns))
 
     def add_row(args, table):
         c.execute("INSERT INTO " + str(table) + " VALUES (" + ','.join(args) + ")")
@@ -30,6 +30,6 @@ class database:
         c.execute("SELECT " + str(args) + " FROM " + str(table))
         print([row for row in c.fetchall()])
 
-    def get_filtered(args, filter):
+    def get_filtered(args, filter, table):
         c.execute("SELECT " + str(args) + " FROM " + str(table) + " where " + str(filter))
         print([row for row in c.fetchall()])
