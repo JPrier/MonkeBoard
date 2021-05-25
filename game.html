@@ -52,18 +52,17 @@
 						<div class="inner">
 							<h1>Elements</h1>
                 <script type="text/javascript">
-                  async function fetchHtmlAsText(url) {
-                    return await (await fetch(url)).text();
+                  function setGame() {
+                    var game = location.search.split('game=')[1] ? location.search.split('game=')[1] : 'home';
+                    switch(game) {
+                      case "Tsnake":
+                        // document.getElementById("output").innerHTML = '<script id="widget" type="text/javascript" src="Turing Snake/sketch.js" />';
+                        document.getElementById("content").innerHTML='<object type="text/html" data="Turing Snake/index.html"></object>';
+                      case "home":
+                        document.location.href = "index.html";
+                    }
                   }
-
-                  var game = location.search.split('game=')[1] ? location.search.split('game=')[1] : 'home';
-                  switch(game) {
-                    case "Tsnake":
-                      // document.getElementById("output").innerHTML = '<script id="widget" type="text/javascript" src="Turing Snake/sketch.js" />';
-                      document.getElementById("content").innerHTML= await fetchHtmlAsText("Turing Snake/index.html");
-                    case "home":
-                      document.location.href = "index.html";
-                  }
+                  window.onload = setGame;
                 </script>
 						</div>
 					</div>
