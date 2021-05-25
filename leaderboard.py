@@ -12,10 +12,10 @@ class leaderboard:
                 )
 
     def add_score(score, username):
-        self.db.add_row([username, score], self.game)
+        self.db.add_row(["username", "score"], self.game)
 
     def get_scores(username):
-        scores = self.db.get_filtered("score", "username="+str(username), self.game)
+        scores = self.db.get_filtered(["score"], "username="+str(username), self.game)
         print(scores)
 
     def get_top_ten():

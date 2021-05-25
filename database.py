@@ -27,9 +27,9 @@ class database:
             print(row, '\n')
 
     def get_values(args):
-        c.execute("SELECT " + str(args) + " FROM " + str(table))
+        c.execute("SELECT " + ','.join(args) + " FROM " + str(table))
         print([row for row in c.fetchall()])
 
     def get_filtered(args, filter, table):
-        c.execute("SELECT " + str(args) + " FROM " + str(table) + " where " + str(filter))
+        c.execute("SELECT " + ','.join(args) + " FROM " + str(table) + " where " + str(filter))
         print([row for row in c.fetchall()])
