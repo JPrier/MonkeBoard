@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Elements - Phantom by HTML5 UP</title>
+		<title>Monke Game</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -22,7 +22,7 @@
 
 							<!-- Logo -->
 								<a href="index.html" class="logo">
-									<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">Phantom</span>
+									<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">Monke</span>
 								</a>
 
 							<!-- Nav -->
@@ -50,9 +50,9 @@
 				<!-- Main -->
 					<div id="main">
 						<div class="inner">
-							<h1>Elements</h1>
-                <div id="game">
-                </div>
+							<h1 id="game_title"></h1>
+              <div id="game">
+              </div>
 
 
                 <script type="text/javascript">
@@ -60,8 +60,9 @@
                     var game = location.search.split('game=')[1];
                     switch(game) {
                       case "Tsnake":
-                        document.getElementById("game").innerHTML = '<script id="widget" type="text/javascript" src="Turing Snake/sketch.js" />';
-                        // document.getElementById("game").innerHTML='<object type="text/html" data="Turing Snake/index.html"></object>';
+                        // document.getElementById("game").innerHTML = '<script id="widget" type="text/javascript" src="Turing Snake/sketch.js" />';
+                        document.getElementById("game").innerHTML='<object width="1000" height="1000" type="text/html" data="Turing Snake/index.html"></object>';
+												document.getElementById("game_title").innerHTML = "Turing Snake";
                         break;
                       default:
                         document.location.href = "index.html";
