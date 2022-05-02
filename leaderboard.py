@@ -16,7 +16,7 @@ class leaderboard:
 
     def get_scores(username):
         scores = self.db.get_filtered(["score"], "username="+str(username), self.game)
-        print(scores)
+        return(scores)
 
     def get_top_ten():
         pass
